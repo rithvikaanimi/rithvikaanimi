@@ -27,7 +27,7 @@ Hi there, I'm Rithvika Animi
   - Integrating cloud services into your projects
 
 - 📫 How to reach me:  
-  - 🔗 [LinkedIn](https://www.linkedin.com/in/RithvikaAnimi/)  
+  - 🔗 [LinkedIn] (https://www.linkedin.com/in/rithvika-animi-a80923260/)
   - 🐙 [GitHub](https://github.com/rithvika)
 
 - 😄 Pronouns: She/Her

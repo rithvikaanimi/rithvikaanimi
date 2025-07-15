@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #000000; /* Set text color to ensure readability against the background */
+        }
+
+        .calculator-container {
+            background-color: #f0ece3; /* Use rgba for a semi-transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input {
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3f7185;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background-color: #3b77a2;
+        }
+
+        #result-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator-container">
+    <h2>Simple Calculator</h2>
+
+    <form>
+        <label for="num1">Enter Number 1: </label>
+        <input type="text" id="num1" placeholder="Enter a number">
+
+        <label for="num2">Enter Number 2: </label>
+        <input type="text" id="num2" placeholder="Enter a number">
+
+        <br>
+
+        <button type="button" onclick="performOperation('add')">Addition</button>
+        <button type="button" onclick="performOperation('subtract')">Subtraction</button>
+        <button type="button" onclick="performOperation('multiply')">Multiplication</button>
+        <button type="button" onclick="performOperation('divide')">Division</button>
+
+        <br>
+
+        <div id="result-container"></div>
+    </form>
+</div>
+
+<script>
+    function performOperation(operation) {
+        var num1 = parseFloat(document.getElementById('num1').value);
+        var num2 = parseFloat(document.getElementById('num2').value);
+
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Please enter valid numbers");
+            return;
+        }
+
+        var result;
+
+        switch (operation) {
+            case 'add':
+                result = num1 + num2;
+                break;
+            case 'subtract':
+                result = num1 - num2;
+                break;
+            case 'multiply':
+                result = num1 * num2;
+                break;
+            case 'divide':
+                if (num2 !== 0) {
+                    result = num1 / num2;
+                } else {
+                    alert("Cannot divide by zero");
+                    return;
+                }
+                break;
+            default:
+                alert("Invalid operation");
+                return;
+        }
+
+        document.getElementById("result-container").innerHTML = `<p>Result of ${operation}: ${result}</p>`;
+    }
+</script>
+
+</body>
+</html>

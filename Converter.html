@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number to Words Converter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #000000; /* Set text color to ensure readability against the background */
+        }
+
+        .calculator-container {
+            background-color: #f0ece3; /* Use rgba for a semi-transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input {
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3f7185;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background-color: #3b77a2;
+        }
+
+        #result-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator-container">
+    <h2>Number to Words Converter</h2>
+
+    <form id="number-form">
+        <label for="number">Enter a number (0-999):</label>
+        <input type="number" id="number" min="0" max="999" placeholder="Enter a number">
+
+        <button type="button" onclick="convertToWords()">Convert</button>
+
+        <div id="result-container"></div>
+    </form>
+</div>
+
+<script>
+    function convertToWords() {
+        var number = parseInt(document.getElementById('number').value);
+
+        if (isNaN(number) || number < 0 || number > 999) {
+            alert("Please enter a number between 0 and 999.");
+            return;
+        }
+
+        var ones = ['','one','two','three','four','five','six','seven','eight','nine'];
+        var teens = ['','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
+        var tens = ['','ten','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
+
+        var result = '';
+
+        if (number === 0) {
+            result = 'zero';
+        } else {
+            var hundredsDigit = Math.floor(number / 100);
+            var tensDigit = Math.floor((number % 100) / 10);
+            var onesDigit = number % 10;
+
+            if (hundredsDigit > 0) {
+                result += ones[hundredsDigit] + ' hundred ';
+            }
+
+            if (tensDigit === 1 && onesDigit > 0) {
+                result += teens[onesDigit] + ' ';
+            } else {
+                result += tens[tensDigit] + ' ';
+                result += ones[onesDigit] + ' ';
+            }
+        }
+
+        document.getElementById('result-container').textContent = result;
+    }
+</script>
+
+</body>
+</html>

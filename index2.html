@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #000000;
+            /* Set text color to ensure readability against the background */
+        }
+
+        .homepage-container {
+            background-color: #f0ece3;
+            /* Use rgba for a semi-transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input {
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #3f7185;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #3b77a2;
+        }
+    </style>
+    <title>Home Page</title>
+</head>
+
+<body>
+    <div class="homepage-container">
+        <h2 style="text-align: center;">Homepage</h2>
+        <form action="#" method="post">
+            <div style="display: block; margin-bottom: 10px;">
+                <a href="Calculator.html"
+                    style="text-decoration: none; display: block; margin-bottom: 10px;">
+                    <button type="button">Simple Calculator</button>
+                </a>
+                <a href="calculator2.html" style="text-decoration: none; display: block; margin-bottom: 10px;">
+                    <button type="button">Check Multiples</button>
+                </a>
+                <a href="CurrentDate.html" style="text-decoration: none; display: block; margin-bottom: 10px;">
+                    <button type="button">Current Date</button>
+                </a>
+                <a href="Converter.html" style="text-decoration: none; display: block;">
+                    <button type="button">Number to Words Converter</button>
+                </a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

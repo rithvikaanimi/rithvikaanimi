@@ -28,7 +28,7 @@ Hi there, I'm Rithvika Animi
 
 - 📫 How to reach me:  
   - 🔗 [LinkedIn] (https://www.linkedin.com/in/rithvika-animi-a80923260/)
-  - 🐙 [GitHub](https://github.com/rithvika)
+  - 🐙 [GitHub](https://github.com/rithvikaanimi)
 
 - 😄 Pronouns: She/Her
 
